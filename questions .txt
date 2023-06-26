@@ -1,0 +1,14 @@
+why won't 
+name: await Pet.findById(req.params.id).name work?
+
+catch (err) {
+    res.render("pets/new", { errorMsg: err.message });
+  }
+
+    res.render("pets/edit", { pet, errorMsg: "", title: "Edit Pet" });
+    ^^^for edit function
+
+
+  for (let key in req.body) {
+    if (req.body[key] === "") delete req.body[key];
+  }

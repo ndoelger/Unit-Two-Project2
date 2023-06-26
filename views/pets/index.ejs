@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+
+<table>
+  <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Birthday</th>
+  </thead>
+  <tbody>
+    <% pets.forEach (function(p) { %>
+    <tr>
+      <td>
+        <form
+          class="buttons"
+          action="/pets/<%= p.id %>/?_method=DELETE"
+          method="POST">
+          <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+        </form>
+        <a class="buttons" href="/pets/<%= p.id %>/edit">
+          <button type="submit">
+            <i class="fa-regular fa-pen-to-square"></i></button
+        ></a>
+      </td>
+      <td><a href="/pets/<%=p.id%>"><%=p.name%></a></td>
+      <td><%=p.type%></td>
+      <td><%=p.breed%></td>
+      <td><%=p.age%></td>
+      <td>
+        <% const dateStr = p.birthday %> <% const date = new Date(dateStr) %>
+        <%=(date.getMonth() + 1).toString().padStart(2, "0") + "/" +
+        (date.getDate()+1).toString().padStart(2, "0") + "/" +
+        date.getFullYear().toString().slice(-2) %>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include("../partials/footer") %>

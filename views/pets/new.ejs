@@ -1,0 +1,16 @@
+<%- include("../partials/header") %>
+
+<form action="/pets" method="POST">
+    <label>Image: <input type="text" name="image" ></label><br>
+    <label>Name: <input type="text" name="name" ></label><br>
+    <label>Type: <select name="Type">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+    </select><br>
+    <label>Breed: <input type="text" name="breed" ></label><br>
+    <label>Age: <input type="number" name="age" ></label><br>
+    <label>Birthday: <input type="date" name="birthday" ></label><br>
+    <button type="submit">Add Pet</button>
+</form>
+
+<%- include("../partials/footer") %>

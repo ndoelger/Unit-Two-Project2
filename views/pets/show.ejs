@@ -1,0 +1,14 @@
+<%- include("../partials/header") %>
+
+<h1><%= pet.name %></h1>
+<h2><%= pet.type %></h2>
+<h2><%= pet.breed %></h2>
+<h2><%= pet.age %></h2>
+<h2>
+  <% const dateStr = pet.birthday %> <% const date = new Date(dateStr) %>
+  <%=(date.getMonth() + 1).toString().padStart(2, "0") + "/" +
+  (date.getDate()+1).toString().padStart(2, "0") + "/" +
+  date.getFullYear().toString().slice(-2) %>
+</h2>
+
+<%- include("../partials/footer") %>
